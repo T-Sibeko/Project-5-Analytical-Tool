@@ -58,77 +58,89 @@
                 <span>2.Dashboard</span>
             </a>
 
+        </div>
+
             <a href="#premium" class="nav-link" data-section="premium">
                 <i class="bi bi-gem"></i>
                 <span>Subscription</span>
             </a>
 
-
-
-
-        </div>
-
-
-
-
-
-
-        </nav>
-
-
-    </aside>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Business Insight<span class="brand-accent">.</span>
-            </a>
-
-            <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-target="#mainNavbar"
-            aria-controls="mainNavbar"
-            aria-expanded="false"
-            aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+            <button class="nav-link nav-parent" data-bs-toggle="collapse"
+            data-bs-target="#testimonialsMenu" aria-expanded="false">
+            <i class="bi bi-chat-square-quote"></i>
+            <span>Testimonial</span>
+            <i class="bi bi-chevron-down ms-auto submenu-arrow"></i>
         </button>
 
-        <div class="collapse navbar-collapse" id="mainNavbar">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
-                </li>
+        <div class="collapse submenu" id="testimonialsMenu">
+            <a href="#feedback" class="nav-link" data-section="feedback">
+                <i class="bi bi-chat-left-text"></i>
+                <span.>1. Feedback</span>
+            </a>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#analytics">Anaytics</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#Contact">Anaytics</a>
-                </li>
-            </ul>
+            <a href="#user-stats" class="nav-link" data-section="user-stats">
+                <i class="bi bi-people"></i>
+                <span.>2. User Statistics</span>
+            </a>
         </div>
-        </div>
-    </nav>
 
-    <main>
-        <section id="home" class="hero-section">
-            <div class="container">
+        <a href="#contact" class="nav-link" data-section="contact">
+            <i class="bi bi-headset"></i>
+            <span>Contact Us</span>
+        </a>
+
+        <button class="nav-link nav-parent" data-bs-toggle="collapse"
+        data-bs-target="#policiesMenu" aria-expanded="false">
+        <i class="bi bi-shield-check"></i>
+    </button>
+
+    <div class="collapse submenu" id="policiesMenu">
+        <a href="#privacy" class="nav-link"
+        data-section="privacy">
+        <i class="bi bi-lock"></i>
+        <span>1. Privacy</span>
+    </a>
+
+    <a href="#data-governance" class="nav-link"
+        data-section="data-governance">
+        <i class="bi bi-lock"></i>
+        <span>2. data Governance</span>
+    </a>
+    </div>
+
+    <a href="#wellness" class="nav-link" data-section="wellness">
+        <i class="b bi-heart-pulse"></i>
+        <span>Wellness</span></a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="status-indicator"></div>
+            <span>Analytics workspace</span>
+        </div>
+    
+    </aside>
+      
+
+    <main class="main-content" id="mainContent">
+
+
+        <section id="home" class="content-section">
+            <div class="topbar">
+                <div>
                 <p class="eyebrow">Business Inights at Your Fingertips</p>
+                <h2>Turn your data into<span class="brand-accent">better decisions.</span></h2>
 
-                <h1>Turn your data into<span class="brand-accent">better decisions.</span></h1>
-
-                <p class="hero-descrciption">
+                <p class="text-muted">
                     Get clear visualisations and meaningful insights of your Business Performance
                 </p>
-
-                <a href="#analytics" class="btn btn-primary">Explore Analytics</a>
             </div>
-        </section>
 
-        <section id="anaytics" class="container py-5">
-            <h2>Want to know more?</h2>
-            <p> For more information contact us or seak to out bot for instant assistance</p>
-        </section>
+            <button class="btn btn-outline-light" id="homeHelptn">
+                <i class="bi bi-question-circle me-2"></i>Help
+            </button>
+            </div>
+
+
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
