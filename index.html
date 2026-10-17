@@ -46,7 +46,7 @@
             <i class="bi bi-chevron-down ms-auto submenu-arrow"></i>
         </button>
 
-        <div class="collapse show submenu" id="anayticsMenu">
+        <div class="collapse show submenu" id="analyticsMenu">
             <a href="#enter-data" class="nav-link"
                 data-section="enter-data">
                 <i class="bi bi-pencil-square"></i>
@@ -75,13 +75,10 @@
         <div class="collapse submenu" id="testimonialsMenu">
             <a href="#feedback" class="nav-link" data-section="feedback">
                 <i class="bi bi-chat-left-text"></i>
-                <span.>1. Feedback</span>
+                <span>Feedback</span>
             </a>
 
-            <a href="#user-stats" class="nav-link" data-section="user-stats">
-                <i class="bi bi-people"></i>
-                <span.>2. User Statistics</span>
-            </a>
+          
         </div>
 
         <a href="#contact" class="nav-link" data-section="contact">
@@ -92,16 +89,17 @@
         <button class="nav-link nav-parent" data-bs-toggle="collapse"
         data-bs-target="#policiesMenu" aria-expanded="false">
         <i class="bi bi-shield-check"></i>
+        <span>1. Policies</span>
     </button>
 
     <div class="collapse submenu" id="policiesMenu">
         <a href="#privacy" class="nav-link"
         data-section="privacy">
-        <i class="bi bi-lock"></i>
+        <i class="b bi-lock"></i>
         <span>1. Privacy</span>
     </a>
 
-    <a href="#data-governance" class="nav-link"
+    <a href="#privacy" class="nav-link"
         data-section="data-governance">
         <i class="bi bi-lock"></i>
         <span>2. data Governance</span>
@@ -127,7 +125,7 @@
         <section id="home" class="content-section">
             <div class="topbar">
                 <div>
-                <p class="eyebrow">Business Inights at Your Fingertips</p>
+                <p class="eyebrow">Business Insights at Your Fingertips</p>
                 <h2>Turn your data into<span class="brand-accent">better decisions.</span></h2>
 
                 <p class="text-muted">
@@ -143,13 +141,13 @@
             <div class="hero-card">
                 <div class="hero-content">
                     <span class="badge rounded-pill text-bg-promarymb-3">Oraganize Your Data</span>
-                    <h1>Your dta.<br>
-                    Yourinsights.<br>
+                    <h1>Your data.<br>
+                    Your insights.<br>
                     <span>Better decisions.</span>
                 </h1>
 
                 <div class="d-flex flex-wrap gap-3">
-                    <a href="#enter data" class="btn btn-primary btn-lg"
+                    <a href="#enter-data" class="btn btn-primary btn-lg"
                     data-section="enter-data">Explore Analytics<i class="bi bi-arrow-right ms-2"></i>
                 </a>
 
@@ -198,12 +196,12 @@
                             <select class="form-select" id="transactionCategory"required>
                                 <option value="">Select Category</option>
                                 <option value="Sales">Sales</option>
-                                <option value="Sales">Services</option>
-                                <option value="Sales">Operations</option>
-                                <option value="Sales">Marketing</option>
-                                <option value="Sales">Transport</option>
-                                <option value="Sales">Salaries</option>
-                                <option value="Sales">Other</option>
+                                <option value="Services">Services</option>
+                                <option value="Operations">Operations</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Transport">Transport</option>
+                                <option value="Salaries">Salaries</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
 
@@ -281,8 +279,7 @@
           </div>
 
           <div class="col-md-4">
-            <label for="filterCategory" c
-            lass="form-label">
+            <label for="filterCategory" contenteditable="form-label">
               Category
             </label>
             <select class="form-select" id="filterCategory">
@@ -435,8 +432,7 @@
             </div>
             <h4>Predictive Forecasting</h4>
             <p>
-              Explore how forecasting could help estimate future
-              business performance from historical data.
+              Explore how forecasting could help estimate future business performance from historical data.
             </p>
             <span class="badge text-bg-secondary">Premium preview</span>
           </div>
@@ -448,28 +444,9 @@
               <span>ILLUSTRATIVE PREVIEW</span>
             </div>
 
-            <h4>Anomaly Detection</h4>
-
-            <p>Imagine highlighting unusual transactions or unexpected
-              changes in business performance.</p>
-
-            <span class="badge text-bg-secondary">Premium preview</span>
-          </div>
-        </div>
-
-        
-            <h4>Automated Insights</h4>
-            <p>Preview a future feature that summarises important patterns and potential opportunities.</p>
-
-            <span class="badge text-bg-secondary">Premium preview</span>
-
-          </div>
-        </div>
-
       
             <h4>Advanced Comparisons</h4>
-            <p>Compare reporting periods and investigate performance
-              across multiple business categories</p>
+            <p>Compare reporting periods and investigate performance across multiple business categories and anomaly Detection</p>
             <span class="badge text-bg-secondary">Premium preview</span>
           </div>
 
@@ -528,8 +505,11 @@
             <p>
               "Interactive charts help tell a clearer business story."
             </p>
+            <strong>Business Manager</strong>
+            <small>Illustrative testimonial</small>
+          </div>
+        </div>
 
-        <section id="user-stats" class="content-section d-none">
 
       
 
@@ -582,8 +562,7 @@
             Submit Feedback
           </button>
 
-          <p class="text-muted mt-3 mb-0">
-            Demonstration form: feedback is not sent or stored.</p>
+  
 
         </form>
       </div>
@@ -608,7 +587,7 @@
             <h4>Email Support</h4>
             <p>BusinessInsights@gmail.come
             </p>
-            <a href="thandoo2010@gmail.com" class="btn btn-outline-light">
+            <a href="mailto:thandoo2010@gmail.com" class="btn btn-outline-light">
               Email Us
             </a>
           </div>
@@ -642,7 +621,7 @@
       </div>
 
       <div class="content-card">
-        <h5>1. Data entered during user-seesions</h5>
+        <h5>1. Data entered during user-sessions</h5>
         <p>
           Transaction and wellness entries are processed in the current
           browser session. Business Insights does not use a database or
@@ -656,8 +635,7 @@
         </p>
 
         <h5>3. Employee wellness privacy</h5>
-        <p>
-          Wellness information should be treated as personal information and are cleared after evry session.</p>
+        <p>Wellness information should be treated as personal information and are cleared after evry session.</p>
 
   
       </div>
