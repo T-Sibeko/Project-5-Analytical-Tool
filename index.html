@@ -140,11 +140,768 @@
             </button>
             </div>
 
+            <div class="hero-card">
+                <div class="hero-content">
+                    <span class="badge rounded-pill text-bg-promarymb-3">Oraganize Your Data</span>
+                    <h1>Your dta.<br>
+                    Yourinsights.<br>
+                    <span>Better decisions.</span>
+                </h1>
 
-    </main>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="#enter data" class="btn btn-primary btn-lg"
+                    data-section="enter-data">Explore Analytics<i class="bi bi-arrow-right ms-2"></i>
+                </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+                <a href="#premium" class="btn btn-outline-light btn-lg"
+                data-section="premium">View Premium</a>
+                </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-2">
+                <div class="col-md-4">
+                    <i class="bi bi-bar-chart-line"></i>
+                    <h5>Interactive Analytics</h5>
+                </div>
+            </div>
+
+            </section>
+
+            <section id="enter-data" class="content-section d-none">
+                <div class="section-heading">
+                    <p class="eyebrow">Data Entry</p>
+                </div>
+
+                <div class="content-card">
+                    <form id="transactionForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="transactionDate" class="form-label">Transaction Date</label>
+                                <input type="date"
+                                class="form-control"
+                                id="transactionDate"
+                                required>
+                        </div>
+
+                        <div class="col md-6">
+                            <label for="transactionType" class="form-label">Transaction Type</label>
+                            <select class="form-select" id="transactionType" required>
+                                <option value="">Select Type</option>
+                                <option value="Revenue">Revenue</option>
+                                <option value="Expense">Expense</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="transactionCategory" class="form-label">Category</label>
+                            <select class="form-select" id="transactionCategory"required>
+                                <option value="">Select Category</option>
+                                <option value="Sales">Sales</option>
+                                <option value="Sales">Services</option>
+                                <option value="Sales">Operations</option>
+                                <option value="Sales">Marketing</option>
+                                <option value="Sales">Transport</option>
+                                <option value="Sales">Salaries</option>
+                                <option value="Sales">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="transactionAmount"
+                            class="form-label">Amount (R)</label>
+                            <input type="number"
+                            class="form-control" id="transactionAmount"
+                            min="0.01"
+                            step="0.01"
+                            placeholder="eg.1500.00"
+                            required>
+                        </div>
+
+                        <div class="col-12"> 
+                        <label for="transactionDescription"
+                        class="form-label">Description</label>
+                        <input type="text"
+                        class="form-control" id="transactionDescription"
+                        placeholder="Briefly describe the transaction"
+                        maxlength="150">
+                    </div>
+
+                    <div class="col-12 d-flex flex-wrap gap-2 mt-4">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-plus-circle me-2"></i>Add Transaction
+                        </button>
+
+                        <button type="reset" class="btn btn-outline-light">Reset Form</button>
+                    </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section id="dashboard" class="content-section d-none">
+                <div class="section-heading">
+                    <p class="eyebrow">ANALYTICS DASHBOARD</p>
+                </div>
+
+                <div class="dashboard-actions">
+                    <button class="btn btn-outline-light" id="loadDemoBtn">
+                        <i class="bi bi-database-add me-2"></i>Load Demo Data
+                    </button>
+
+                    <button class="btn btn-outline-light" id="downloadBtn">
+                        <i class="bi bi-download me-2"></i>Download CSV
+                    </button>
+
+                    <button class="btn btn-outline-danger" id="clearDataBtn">
+                        <i class="bi bi-trash me-2"></i>Clear Data
+                    </button>
+                </div>
+
+      <div class="content-card mt-4"><h5>Filter Your Analysis</h5>
+
+        <div class="row g-3 mt-1">
+
+          <div class="col-md-4">
+            <label for="filterStartDate" 
+            class="form-label">
+              From Date
+            </label>
+            <input type="date" 
+            class="form-control" id="filterStartDate">
+          </div>
+
+          <div class="col-md-4">
+            <label for="filterEndDate" 
+            class="form-label">
+              To Date
+            </label>
+            <input type="date" 
+            class="form-control" id="filterEndDate">
+          </div>
+
+          <div class="col-md-4">
+            <label for="filterCategory" c
+            lass="form-label">
+              Category
+            </label>
+            <select class="form-select" id="filterCategory">
+              <option value="All">All Categories</option>
+              <option value="Sales">Sales</option>
+              <option value="Services">Services</option>
+              <option value="Operations">Operations</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Transport">Transport</option>
+              <option value="Salaries">Salaries</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row g-3 mt-2">
+
+        <div class="col-sm-6 col-xl-3">
+          <div class="kpi-card"><span>Total Revenue</span><i class="bi bi-arrow-up-right-circle"></i>
+            <h3 id="totalRevenue">R 0.00</h3>
+            <small>Revenue in selected data</small>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+          <div class="kpi-card">
+            <span>Total Expenses</span><i class="bi bi-arrow-down-right-circle"></i>
+            <h3 id="totalExpenses">R 0.00</h3>
+            <small>Expenses in selected data</small>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+          <div class="kpi-card">
+            <span>Net Result</span><i class="bi bi-wallet2"></i>
+            <h3 id="netResult">R 0.00</h3>
+            <small>Revenue minus expenses</small>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+          <div class="kpi-card">
+            <span>Transactions</span><i class="bi bi-receipt"></i>
+            <h3 id="transactionCount">0</h3>
+            <small>Matching records</small>
+          </div>
+        </div>
+
+      </div>
+
+      
+      <div class="row g-4 mt-1">
+
+        <div class="col-lg-8">
+          <div class="chart-card">
+            <h5>Revenue Trend</h5>
+
+            <p class="text-muted">Revenue recorded over time</p>
+            <div class="chart-container">
+              <canvas id="revenueTrendChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="chart-card">
+            <h5>Expense Breakdown</h5>
+            <p class="text-muted">Expenses by category</p>
+            <div class="chart-container">
+              <canvas id="expenseBreakdownChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="chart-card">
+            <h5>Revenue vs Expenses</h5>
+            <div class="chart-container">
+              <canvas id="revenueExpenseChart"></canvas>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="chart-card">
+            <h5>Category Performance</h5>
+            <div class="chart-container">
+              <canvas id="categoryPerformanceChart"></canvas>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="content-card mt-4">
+        <h5>Transaction Records</h5>
+        <p class="text-muted">The data below respond to the selected filters.</p>
+
+        <div class="table-responsive">
+          <table class="table table-dark table-hover align-middle">
+            <thead>
+
+              <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th class="text-end">Amount</th>
+              </tr>
+
+            </thead>
+
+            <tbody id="transactionTableBody">
+              <tr><td colspan="5" class="text-center text-muted">
+                  No transactions yet. Enter data or load demo data.</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="premium" class="content-section d-none">
+
+      <div class="section-heading">
+        <p class="eyebrow">GET PREMIUM INSIGHTS</p>
+        <h2>Go Beyond Basic Analytics</h2>
+        <p>
+          Explore examples of advanced features that could be included
+          in a future premium subscription.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6">
+
+          <div class="premium-card">
+
+            <div class="premium-visual"><i class="bi bi-graph-up-arrow"></i>
+              <span>PREVIEW</span>
+            </div>
+            <h4>Predictive Forecasting</h4>
+            <p>
+              Explore how forecasting could help estimate future
+              business performance from historical data.
+            </p>
+            <span class="badge text-bg-secondary">Premium preview</span>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="premium-card">
+            <div class="premium-visual"><i class="bi bi-search"></i>
+              <span>ILLUSTRATIVE PREVIEW</span>
+            </div>
+
+            <h4>Anomaly Detection</h4>
+
+            <p>Imagine highlighting unusual transactions or unexpected
+              changes in business performance.</p>
+
+            <span class="badge text-bg-secondary">Premium preview</span>
+          </div>
+        </div>
+
+        
+            <h4>Automated Insights</h4>
+            <p>Preview a future feature that summarises important patterns and potential opportunities.</p>
+
+            <span class="badge text-bg-secondary">Premium preview</span>
+
+          </div>
+        </div>
+
+      
+            <h4>Advanced Comparisons</h4>
+            <p>Compare reporting periods and investigate performance
+              across multiple business categories</p>
+            <span class="badge text-bg-secondary">Premium preview</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="subscription-card mt-4">
+        <div>
+          <p class="eyebrow">Unlock deeper insights</p>
+          
+        </div>
+
+        <button class="btn btn-primary btn-lg" id="subscriptionBtn"><i class="bi bi-gem me-2"></i>
+          Explore Subscription</button>
+      </div>
+
+    </section>
+
+    <section id="feedback" class="content-section d-none">
+
+      <div class="section-heading">
+        <p class="eyebrow">COMMUNITY</p>
+        <h2>Feedback & Testimonials</h2>
+    
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <i class="bi bi-quote"></i>
+            <p>
+              "The visual summaries make business information
+              easier to understand."
+            </p>
+            <strong>Start-up Business Owner</strong>
+            <small>Illustrative testimonial</small>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <i class="bi bi-quote"></i>
+            <p>
+              "I like having key performance indicators in one place."
+            </p>
+            <strong>Business Analyst</strong>
+            <small>Illustrative testimonial</small>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <i class="bi bi-quote"></i>
+            <p>
+              "Interactive charts help tell a clearer business story."
+            </p>
+
+        <section id="user-stats" class="content-section d-none">
+
+      
+
+    <section id="feedback-form" class="content-section d-none">
+      <div class="section-heading">
+        <p class="eyebrow">YOUR OPINION MATTERS</p>
+        <h2>Share Your Feedback</h2>
+      </div>
+
+      <div class="content-card">
+
+        <form id="feedbackForm">
+
+          <div class="mb-3">
+            <label for="feedbackName" class="form-label">Name</label>
+            <input
+              type="text"
+              id="feedbackName"
+              class="form-control"
+              required
+            >
+          </div>
+
+          <div class="mb-3">
+            <label for="feedbackRating" class="form-label">
+              Your Rating
+            </label><select id="feedbackRating" class="form-select" required>
+              <option value="">Select a rating</option>
+              <option value="5">5 - Excellent</option>
+              <option value="4">4 - Very Good</option>
+              <option value="3">3 - Good</option>
+              <option value="2">2 - Needs Improvement</option>
+              <option value="1">1 - Poor</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="feedbackMessage" class="form-label">
+              Comments</label>
+
+            <textarea
+              id="feedbackMessage"
+              class="form-control"
+              rows="4"
+              required></textarea>
+
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Submit Feedback
+          </button>
+
+          <p class="text-muted mt-3 mb-0">
+            Demonstration form: feedback is not sent or stored.</p>
+
+        </form>
+      </div>
+    </section>
+
+    
+    <section id="contact" 
+    class="content-section d-none">
+
+      <div class="section-heading">
+        <p class="eyebrow">WE ARE HERE TO HELP</p>
+        <h2>Contact Nexus</h2>
+        <p>Choose a contact option or open the AI assistant forinstant help.</p>
+
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6">
+          <div class="content-card">
+            <i class="bi bi-envelope feature-icon"></i>
+            <h4>Email Support</h4>
+            <p>BusinessInsights@gmail.come
+            </p>
+            <a href="thandoo2010@gmail.com" class="btn btn-outline-light">
+              Email Us
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+
+          <div class="content-card"><i class="bi bi-robot feature-icon"></i>
+            <h4>Immediate Assistance</h4>
+            <p>
+              Open the chat window for avaliable help options.
+            </p>
+            <button class="btn btn-primary" 
+            id="openChatBtn">
+              Speak to the Assistant
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="privacy" class="content-section d-none">
+
+      <div class="section-heading">
+        <p class="eyebrow">Privacy & Data Governance</p>
+
+        
+      </div>
+
+      <div class="content-card">
+        <h5>1. Data entered during user-seesions</h5>
+        <p>
+          Transaction and wellness entries are processed in the current
+          browser session. Business Insights does not use a database or
+          browser local storage.
+        </p>
+
+        <h5>2. User control</h5>
+        <p>
+          Users can clear their entered records and reset the dashboard.
+          Refreshing the page also removes session-only records.
+        </p>
+
+        <h5>3. Employee wellness privacy</h5>
+        <p>
+          Wellness information should be treated as personal information and are cleared after evry session.</p>
+
+  
+      </div>
+
+    </section>
+
+  
+    <section id="wellness" class="content-section d-none">
+
+      <div class="section-heading">
+        <p class="eyebrow">PERSONAL WELLBEING</p>
+
+        <h2>Your Wellness Dashboard</h2>
+        <p>Record personal activity and view your own activity summary.
+          Entries are not stored or shared.</p>
+      </div>
+
+      <div class="content-card">
+
+        <form id="wellnessForm">
+
+      <div class="row g-3">
+
+            <div class="col-md-6"><label for="activityDate" class="form-label">Activity Date</label>
+
+              <input
+                type="date"
+                class="form-control"
+                id="activityDate"
+                required>
+
+            </div>
+
+            <div class="col-md-6">
+              <label for="activityType" class="form-label">Activity Type</label>
+              <select class="form-select" id="activityType" required>
+
+                <option value="">Choose activity</option>
+                <option value="Walking">Walking</option>
+                <option value="Running">Running</option>
+                <option value="Cycling">Cycling</option>
+                <option value="Swimming">Swimming</option>
+                <option value="Other">Other</option>
+
+              </select>
+            </div>
+
+          <div class="col-md-6">
+              <label for="activityDuration" class="form-label">Duration (minutes)</label>
+              
+              <input
+                type="number"
+                class="form-control"
+                id="activityDuration"
+                min="1"
+                step="1"
+                required>
+
+            </div>
+
+            <div class="col-md-6">
+              <label for="activityDistance" class="form-label">Distance (km, optional)</label>
+              
+              <input
+                type="number"
+                class="form-control"
+                id="activityDistance"
+                min="0"
+                step="0.1">
+
+            </div>
+
+            <div class="col-md-6">
+              <label for="weeklyGoal" class="form-label">Weekly Activity Goal (minutes)</label>
+             
+              <input
+                type="number"
+                class="form-control"
+                id="weeklyGoal"
+                min="1"
+                value="150"
+                required>
+
+            </div>
+
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">
+                <i class="bi bi-plus-circle me-2"></i>Add Activity</button>
+
+              <button type="button" class="btn btn-outline-danger" id="clearWellnessBtn">
+                Clear Wellness Data</button>
+
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+      <div class="row g-3 mt-2">
+
+        <div class="col-md-4">
+
+          <div class="kpi-card">
+            <span>Total Activity Minutes</span>
+
+            <h3 id="wellnessMinutes">0</h3>
+            <small>Recorded activity</small>
+          </div>
+
+        </div>
+
+        <div class="col-md-4">
+          <div class="kpi-card">
+            <span>Activity Sessions</span>
+            <h3 id="wellnessSessions">0</h3>
+            <small>Sessions recorded</small>
+          </div>
+
+        </div>
+
+        <div class="col-md-4">
+          <div class="kpi-card">
+            <span>Total Distance</span>
+            <h3 id="wellnessDistance">0 km</h3>
+            <small>Distance entered</small>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="chart-card mt-4">
+        <h5>Personal Activity Overview</h5>
+        <div class="chart-container">
+          <canvas id="wellnessChart"></canvas>
+        </div>
+      </div>
+
+      <div class="content-card mt-4">
+
+        <h5>Weekly Goal Progress</h5>
+
+        <div class="progress" role="progressbar"
+             aria-label="Weekly activity goal progress"
+             aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar" id="wellnessProgress"
+               style="width: 0%">0%</div>
+
+        </div>
+
+        <p class="text-muted mt-2" id="wellnessGoalText">Add activities to see your progress</p>
+
+      </div>
+
+    </section>
+
+
+
+
+    <footer class="site-footer">
+      <p>© 2026 Business Insights</p>
+      <p>Turning data into clearer decisions.</p>
+
+    </footer>
+
+  </main>
+
+
+  <div class="chat-panel d-none" id="chatPanel">
+
+    <div class="chat-header">
+
+      <div> <i class="bi bi-robot me-2"></i>
+        AI Assistant
+  
+      </div>
+
+      <button class="btn-close btn-close-white" id="closeChatBtn"
+              aria-label="Close chat"></button>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+      <div class="chat-message bot-message">
+        Hello! I'm an AI assistant. What would you like help with?
+      </div>
+
+      <button class="chat-option" data-chat="analytics">Understanding analytics</button>
+
+      <button class="chat-option" data-chat="premium">Premium features</button>
+
+      
+    </div>
+
+    <div class="chat-footer">
+      
+
+    </div>
+
+  </div>
+
+  
+  <div class="modal fade" id="infoModal" tabindex="-1"
+
+       aria-labelledby="infoModalTitle" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+      <div class="modal-content">
+
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="infoModalTitle"> Information</h5>
+
+          <button type="button" class="btn-close btn-close-white"
+                  data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+  
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary"
+                 
+          data-bs-dismiss="modal">
+            Got it
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  
+  <script src="script.js"></script>
 
 </body>
 </html>
+
+                
