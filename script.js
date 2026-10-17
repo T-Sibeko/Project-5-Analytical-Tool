@@ -1,0 +1,1 @@
+console.log("Business Intelligence is running!");

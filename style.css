@@ -1,0 +1,71 @@
+:root{
+    --navy:#0b1020;
+    --surface:#151c31;
+    --purple:#8b5cf6;
+    --blue:#3b82f6;
+    --text:#f5f7ff;
+    --muted:#b3bdd3;
+}
+
+body{
+    margin: 0;
+    background-color: var(--navy);
+    color: var(text);
+    font-family: Arial, sans-serif;
+}
+
+.navbar{
+    background-color: var(--navy);
+    border-bottom: 1px solid #27314c;
+}
+
+.brand-accent{
+    color:var(--purple)
+}
+
+.hero-section{
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+    background: radial-gradient(ellipse at 80% 30%, rgba(107,70,193,0.22),transparent 45%),var(--navy);
+}
+
+.eyebrow{
+    color: #a78bfa;
+    font-size:0.8rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero-section h1{
+    max-width: 800px;
+    margin: 20px0;
+    font-size: clamp(2.5rem,6vw,5rem);
+    font-weight: 700;
+}
+
+.hero-description{
+    max-width: 620px;
+    margin-bottom: 30px;
+    color:var(--muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.btn-primary{
+    background-color: var(--purple);
+    border-color: var(--purple);
+    padding:12px 24px;
+}
+
+.btn-primary:hover{
+    background-color: var(--blue);
+    border-color: var(--blue);
+}
+
+#analytics h2,
+#contact h2 {
+    margin-bottom: 16px;
+    font-weight: 700;
+}
