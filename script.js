@@ -1,7 +1,3 @@
-setDefaultDates();
-renderDashboard();
-renderWellness();
-
 const initialSection = window.location.hash.replace("#", "");
 
 
@@ -45,8 +41,6 @@ function showModal(title, message) {
 
   let body = modalElement.querySelector(".modal-body");
 
-  // Your supplied HTML omits the modal body,
-  // so create it when necessary.
   if (!body) {
     body = document.createElement("div");
     body.className = "modal-body";
@@ -102,13 +96,24 @@ function showSection(sectionId) {
 
   getElement("sidebar")?.classList.remove("mobile-open");
 
+  function getFilteredTransactions() {const startDate = getElement("filterStartDate")?.value || "";
+
+  const endDate =getElement("filterEndDate")?.value || "";const category =getElement("filterCategory")?.value || "All";
+
+  return transactions.filter(transaction => {const matchesStart =!startDate || transaction.date >= startDate;
+
+    const matchesEnd =!endDate || transaction.date <= endDate;
+
+    const matchesCategory =category === "All" ||transaction.category === category;
+
+    return matchesStart && matchesEnd && matchesCategory;
+  });
+}
+
   if (sectionId === "dashboard") {
     renderDashboard();
   }
 
-  if (sectionId === "wellness") {
-    renderWellness();
-  }
 }
 
 document.querySelectorAll("[data-section]").forEach(link => {
@@ -185,7 +190,7 @@ transactionForm?.addEventListener("submit", event =>
 });
 
 transactionForm?.addEventListener("reset", () => {
-  // reset the form first
+  // reset the form 
   setTimeout(() => {
     const date = getElement("transactionDate");
     if (date && !date.value) setDefaultDates();
@@ -569,4 +574,6 @@ document.querySelectorAll("[data-chat]").forEach(button => {
 );
 }
 );
-
+setDefaultDates();
+renderDashboard();
+renderWellness();

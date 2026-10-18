@@ -1,13 +1,16 @@
 :root{
-    --navy:#0b1020;
-    --surface:#151c31;
+    --bg-sidebar:#0b1020;
+    --bg-main:#070b16;
     --purple:#8b5cf6;
-    --blue:#3b82f6;
+    --bg-card:#10182b;
     --text-main:#f5f7ff;
-    --text-muted:#b3bdd3;
+    --text-muted:#a3afc8;
     --accent-blue: #4f8cff;
     --success: #38d9a9;
     --danger: #ff7185;
+    --accent:#3b82f6;
+    --border-color:#26324d;
+    --bg-card-light:#17223a;
 }
 
 * {
@@ -20,9 +23,10 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg-main);
+  background-color: var(--bg-main);
   color: var(--text-main);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
 }
 
 p {
