@@ -537,12 +537,30 @@ document.querySelectorAll("[data-chat]").forEach(button => {
         "user-message"
       );
 
-      addChatMessage("The premium cards are previews of possible forecasting, anomaly detection and advanced comparison features. They are not connected to real AI services.");
+      addChatMessage("Choose from our available subscriptions or contact the team using the email provided for large-scale data or customized reports ")
     }
   }
 );
 }
 );
+
+getElement("clearWellnessData")?.addEventListener("click", () => 
+  {
+    const form = getElement("wellnessForm");
+
+    if (!form) return;
+
+    form.reset();
+
+  
+    const activityDate = getElement("activityDate");
+    if (activityDate) {activityDate.value = new Date().toISOString().split("T")[0];}
+
+    const weeklyGoal = getElement("weeklyGoal");
+    if (weeklyGoal) {weeklyGoal.value = "150";
+    }
+});
+
 
 // Condition for existing sections for the navigations
 const initialHash = window.location.hash.slice(1);

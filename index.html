@@ -737,14 +737,22 @@
 
             </div>
 
-            <div class="col-12">
-              <button type="button" class="btn btn-primary">
-                <i class="bi bi-plus-circle me-2"></i>Add Activity</button>
+            <div class="d-flex flex-wrap gap-2 mt-4">
 
-              <button type="button" class="btn btn-outline-danger" id="clearWellnessBtn">
-                Clear Wellness Data</button>
+    <button type="button"
+            class="btn btn-primary"
+            id="addWellnessActivity"><i class="bi bi-plus-circle me-2"></i>
+        Add Activity
+    </button>
 
-            </div>
+    <button type="button"
+            class="btn btn-outline-danger"
+            id="clearWellnessData">
+        <i class="bi bi-trash me-2"></i>
+        Clear Wellness Data
+    </button>
+
+</div>
 
           </div>
 
@@ -784,10 +792,10 @@
 
       </div>
 
-      <div class="chart-card mt-4">
+      <div class="chart-card mt-4 wellness-overview">
         <h5>Personal Activity Overview</h5>
-        <div class="chart-container d-flex align-item-center justify-conyent-center">
-          <p class="text-muted text-center">Your wellness visualisations will appearhere in future version</p>
+        <div class="wellness-image"><img src="wellness-image.png" alt="fintness tracker placeholder" loading="lazy">
+          <p class="wellness-image-caption">Your wellness visualisations will appearhere in future version</p>
         </div>
       </div>
 

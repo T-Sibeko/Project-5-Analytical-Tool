@@ -654,6 +654,39 @@ a {
   display: none;
 }
 
+.wellness-overview {
+    padding: 24px;
+    overflow: hidden;
+}
+
+.wellness-overview h5 {
+    margin-bottom: 18px;
+    color: var(--text-main);
+}
+
+.wellness-image {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    background: var(--bg-card);
+}
+
+.wellness-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 14px;
+}
+
+.wellness-image-caption {
+    margin: 12px 0 0;
+    color: #cbd5e8;
+    font-size: 0.9rem;
+}
+
+
 
 
 @media (max-width: 991.98px) {
