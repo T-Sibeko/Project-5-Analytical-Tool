@@ -87,22 +87,6 @@ function showSection(sectionId, targetId = null) {
     // Shows the selected section.
     targetSection.classList.remove("d-none");
 
-    // Highlight the selected navigation
-    document.querySelectorAll("[data-section]").forEach(link => {
-    link.addEventListener("click", event => {event.preventDefault();
-
-        const sectionId = link.dataset.section;
-        const targetId = link.dataset.target || null;
-
-        showSection(sectionId, targetId);
-
-        // URL guide.
-        history.replaceState(
-            null,"",`#${targetId || sectionId}`
-        );
-    });
-});
-
 
 
 

@@ -130,8 +130,7 @@ h6 {
   font-size: 1.05rem;
 }
 
-.sidebar-nav .nav-link:hover,
-.sidebar-nav .nav-link.active {
+.sidebar-nav .nav-link:hover {
   color: white;
   background: linear-gradient(
     90deg,
