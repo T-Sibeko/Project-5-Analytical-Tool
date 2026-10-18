@@ -65,18 +65,28 @@
                 <span>Subscription</span>
             </a>
 
-            <button class="nav-link nav-parent" data-bs-toggle="collapse"
-            data-bs-target="#testimonialsMenu" aria-expanded="false">
-            <i class="bi bi-chat-square-quote"></i>
-            <span>Testimonial</span>
-            <i class="bi bi-chevron-down ms-auto submenu-arrow"></i>
-        </button>
+            <button class="nav-link nav-parent"type="button"
+        data-bs-toggle="collapse" data-bs-target="#testimonialsMenu" aria-expanded="false"
+        aria-controls="testimonialsMenu">
+    <i class="bi bi-chat-square-quote"></i>
+    <span>Testimonials</span><i class="bi bi-chevron-down ms-auto submenu-arrow"></i>
+</button>
 
-        <div class="collapse submenu" id="testimonialsMenu">
-            <a href="#feedback-form" class="nav-link" data-section="feedback-form">
-                <i class="bi bi-chat-left-text"></i>
-                <span>Feedback</span>
-            </a>
+<div class="collapse submenu" id="testimonialsMenu">
+
+    <a href="#feedback"
+       class="nav-link"
+       data-section="feedback">
+        <i class="bi bi-chat-square-quote"></i>
+        <span>Testimonials</span>
+    </a>
+
+    <a href="#feedback-form"
+       class="nav-link"
+       data-section="feedback-form">
+        <i class="bi bi-chat-left-text"></i>
+        <span>Feedback Form</span>
+    </a>
 
           
         </div>
@@ -86,29 +96,37 @@
             <span>Contact Us</span>
         </a>
 
-        <button class="nav-link nav-parent" data-bs-toggle="collapse"
-        data-bs-target="#policiesMenu" aria-expanded="false">
-        <i class="bi bi-shield-check"></i>
-        <span>Policies</span>
-    </button>
+      <button class="nav-link nav-parent"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#policiesMenu"
+        aria-expanded="false"
+        aria-controls="policiesMenu">
+    <i class="bi bi-shield-check"></i>
+    <span>Policies</span>
+    <i class="bi bi-chevron-down ms-auto submenu-arrow"></i>
+</button>
 
-    <div class="collapse submenu" id="policiesMenu">
-        <a href="#privacy" class="nav-link"
-        data-section="privacy">
-        <i class="b bi-lock"></i>
-        <span>1. Privacy</span>
+<div class="collapse submenu" id="policiesMenu">
+
+    <a href="#data-governance" class="nav-link" data-section="privacy"
+       data-target="data-governance"><i class="bi bi-diagram-3"></i>
+        <span>1. Data Governance</span>
     </a>
 
-    <a href="#privacy" class="nav-link"
-        data-section="data-governance">
-        <i class="bi bi-lock"></i>
-        <span>2. data Governance</span>
+    <a href="#privacy-policy" class="nav-link"
+       data-section="privacy" data-target="privacy-policy"><i class="bi bi-lock"></i>
+        <span>2. Privacy</span>
     </a>
-    </div>
+
+</div>
+
+
 
     <a href="#wellness" class="nav-link" data-section="wellness">
         <i class="b bi-heart-pulse"></i>
         <span>Wellness</span></a>
+
         </nav>
 
         <div class="sidebar-footer">
@@ -243,9 +261,6 @@
                 </div>
 
                 <div class="dashboard-actions">
-                    <button class="btn btn-outline-light" id="loadDemoBtn">
-                        <i class="bi bi-database-add me-2"></i>Load Demo Data
-                    </button>
 
                     <button class="btn btn-outline-light" id="downloadBtn">
                         <i class="bi bi-download me-2"></i>Download CSV
@@ -510,7 +525,8 @@
           </div>
         </div>
 
-
+</div>
+    </section>
       
 
     <section id="feedback-form" class="content-section d-none">
@@ -621,20 +637,20 @@
       </div>
 
       <div class="content-card">
-        <h5>1. Data Governance</h5>
+        <h5 id="data-governance">1. Data Governance</h5>
         <p>
           Transaction and wellness entries are processed in the current
           browser session. Business Insights does not use a database or
           browser local storage.
         </p>
 
-        <h5>2. Privacy</h5>
+        <h5 id="privacy-policy">2. Privacy</h5>
         <p>
           Users can clear their entered records and reset the dashboard.
           Refreshing the page also removes session-only records.
         </p>
 
-        <h5>3. Employee wellness privacy</h5>
+        <h5 id="wellness-privacy">3. Employee wellness privacy</h5>
         <p>Wellness information should be treated as personal information and are cleared after evry session.</p>
 
   

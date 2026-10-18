@@ -1,10 +1,3 @@
-const initialSection = window.location.hash.replace("#", "");
-
-
-if (initialSection && getElement(initialSection)?.classList.contains("content-section")) 
-    {showSection(initialSection);} 
-else {showSection("home");}
-
 const transactions = [];
 
 const wellnessActivities = [];
@@ -74,59 +67,80 @@ function escapeHTML(value) {
   })[character]);
 }
 
+function showSection(sectionId, targetId = null) {
+    const targetSection = getElement(sectionId);
 
-function showSection(sectionId) {
-  const target = getElement(sectionId);
-
-  
-
-  document.querySelectorAll(".content-section").forEach(section => {
-    section.classList.add("d-none");
-  });
-
-  target.classList.remove("d-none");
-  document.querySelectorAll(".sidebar-nav [data-section]")
-    .forEach(link => {
-      link.classList.toggle(
-        "active",
-        link.dataset.section === sectionId
-      );
+    // Stop safely if the section does not exist.
+    if (
+        !targetSection ||
+        !targetSection.classList.contains("content-section")
+    ) {
+        console.warn("Section not found:", sectionId);
+        return;
     }
-);
 
-  getElement("sidebar")?.classList.remove("mobile-open");
+    // Hides all main sections
+    document.querySelectorAll(".content-section").forEach(section => {
+        section.classList.add("d-none");
+    });
 
-  function getFilteredTransactions() {const startDate = getElement("filterStartDate")?.value || "";
+    // Shows the selected section.
+    targetSection.classList.remove("d-none");
 
-  const endDate =getElement("filterEndDate")?.value || "";const category =getElement("filterCategory")?.value || "All";
+    // Highlight the selected navigation
+    document.querySelectorAll("[data-section]").forEach(link => {
+    link.addEventListener("click", event => {event.preventDefault();
 
-  return transactions.filter(transaction => {const matchesStart =!startDate || transaction.date >= startDate;
+        const sectionId = link.dataset.section;
+        const targetId = link.dataset.target || null;
 
-    const matchesEnd =!endDate || transaction.date <= endDate;
+        showSection(sectionId, targetId);
 
-    const matchesCategory =category === "All" ||transaction.category === category;
-
-    return matchesStart && matchesEnd && matchesCategory;
-  });
-}
-
-  if (sectionId === "dashboard") {
-    renderDashboard();
-  }
-
-}
-
-document.querySelectorAll("[data-section]").forEach(link => {
-  link.addEventListener("click", event => {
-    event.preventDefault();
-
-    const sectionId = link.dataset.section;
-    showSection(sectionId);
-
-
-    history.replaceState(null, "", `#${sectionId}`);
-  });
+        // URL guide.
+        history.replaceState(
+            null,"",`#${targetId || sectionId}`
+        );
+    });
 });
+
+
+
+
+    // Close the mobile navigation after selecting a section
+    getElement("sidebar")?.classList.remove("mobile-open");
+
+    // Refresh the dashboard when it is opened
+    if (sectionId === "dashboard") {
+        renderDashboard();
+    }
+
+    // Scroll to a specific heading, such as a Policies subsection
+    if (targetId) {
+        requestAnimationFrame(() => {
+            getElement(targetId)?.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    }
+}
+
+
+function getFilteredTransactions() {const startDate = getElement("filterStartDate")?.value || "";
+    const endDate = getElement("filterEndDate")?.value || "";
+    const category = getElement("filterCategory")?.value || "All";
+
+    return transactions.filter(transaction => {const matchesStart =!startDate || transaction.date >= startDate;
+
+        const matchesEnd =!endDate || transaction.date <= endDate;
+
+        const matchesCategory =category === "All" ||transaction.category === category;
+
+        return matchesStart && matchesEnd && matchesCategory;
+    });
+}
+
+
 
 // Sidebar 
 
@@ -417,56 +431,6 @@ function renderCharts(records) {
   );
 }
 
-//DEMO DATA
-
-
-getElement("loadDemoBtn")?.addEventListener("click", () => {
-  if (transactions.length > 0 &&
-      !confirm("Add demo transactions to your existing records?")) {
-    return;
-  }
-
-  const today = new Date();
-
-  function dateDaysAgo(days) {
-    const date = new Date(today);
-    date.setDate(date.getDate() - days);
-
-    return [date.getFullYear(),
-      String(date.getMonth() + 1).padStart(2, "0"),
-      String(date.getDate()).padStart(2, "0")].join("-");
-  }
-
-  const demoTransactions = [
-    [0, "Revenue", "Sales", 12500, "Product sales"],
-    [2, "Expense", "Operations", 3200, "Operating costs"],
-    [4, "Revenue", "Services", 7800, "Consulting services"],
-    [7, "Expense", "Marketing", 1450, "Marketing campaign"],
-    [10, "Revenue", "Transport", 5600, "Delivery income"],
-    [13, "Expense", "Salaries", 4200, "Staff costs"],
-    [18, "Revenue", "Sales", 9600, "Monthly sales"],
-    [21, "Expense", "Transport", 1850, "Vehicle costs"]
-  ]
-  ;
-
-  demoTransactions.forEach(([days, type, category, amount, description]) => 
-    {
-    
-        transactions.push({
-      id: Date.now() + Math.random(),
-      date: dateDaysAgo(days),
-      type,
-      category,
-      amount,
-      description
-    }
-);
-  });
-
-  renderDashboard();
-
-  showModal("Demo data loaded", "Sample transactions have been added for demonstration.");
-});
 
 
 // Refresh
@@ -574,6 +538,17 @@ document.querySelectorAll("[data-chat]").forEach(button => {
 );
 }
 );
-setDefaultDates();
-renderDashboard();
-renderWellness();
+
+// Condition for existing sections for the navigations
+const initialHash = window.location.hash.slice(1);
+const initialTarget = getElement(initialHash);
+
+if (initialTarget) {
+    const parentSection = initialTarget.closest(".content-section");
+
+    if (parentSection) {showSection(
+            parentSection.id,initialTarget.id !== parentSection.id? initialTarget.id: null
+        );} else {showSection("home");}
+} else {
+    showSection("home");
+}
