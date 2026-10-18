@@ -557,7 +557,7 @@ getElement("clearWellnessData")?.addEventListener("click", () =>
     if (activityDate) {activityDate.value = new Date().toISOString().split("T")[0];}
 
     const weeklyGoal = getElement("weeklyGoal");
-    if (weeklyGoal) {weeklyGoal.value = "150";
+    if (weeklyGoal) {weeklyGoal.value = "0";
     }
 });
 
