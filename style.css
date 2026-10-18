@@ -686,7 +686,23 @@ a {
     font-size: 0.9rem;
 }
 
+.site-footer .footer-author {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
 
+.site-footer .footer-author a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.site-footer .footer-author a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
 
 
 @media (max-width: 991.98px) {
