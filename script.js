@@ -492,7 +492,7 @@ getElement("homeHelptn")?.addEventListener("click", () => {
 getElement("subscriptionBtn")?.addEventListener("click", () => {
   showModal(
     "Premium preview",
-    "This is an illustrative subscription preview. No payment or subscription is processed."
+    "No payment or subscription can be processed at the moment."
   );
 });
 
