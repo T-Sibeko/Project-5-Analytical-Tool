@@ -183,13 +183,34 @@ h6 {
   border-radius: 50%;
 }
 
+
 .sidebar.collapsed .brand-text,
 .sidebar.collapsed .sidebar-footer span,
 .sidebar.collapsed .sidebar-nav .nav-link span,
-.sidebar.collapsed .sidebar-toggle,
 .sidebar.collapsed .submenu-arrow {
   display: none;
 }
+
+
+.sidebar.collapsed .sidebar-toggle {
+  display: block;
+  position: absolute;
+  top: 30px;
+  right: 4px;
+  z-index: 5;
+  padding: 6px;
+  color: var(--text-main);
+  background: var(--bg-sidebar);
+  border-radius: 6px;
+}
+
+.sidebar .brand {
+  position: relative;
+  min-height: 43px;
+}
+
+
+
 
 .sidebar.collapsed .brand {
   justify-content: center;
@@ -209,6 +230,7 @@ h6 {
   min-height: 100vh;
   margin-left: 260px;
   padding: 30px;
+  color: white;
   transition: margin-left 0.25s ease;
 }
 
@@ -245,6 +267,35 @@ body.sidebar-collapsed .main-content {
 .hero-card h1 span {
   color: #a99cff;
 }
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 55%;
+    max-width: 600px;
+}
+
+.hero-visual {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hero-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
 
 .topbar h2 {
   font-size: clamp(1.6rem, 3vw, 2.5rem);
@@ -636,6 +687,28 @@ a {
     display: none;
   }
 }
+
+@media (max-width: 767.98px) {
+    .hero-card {
+        align-items: flex-start;
+        padding-bottom: 200px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-visual {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 200px;
+        opacity: 0.85;
+    }
+}
+
 
 @media (max-width: 575.98px) {
   .main-content,

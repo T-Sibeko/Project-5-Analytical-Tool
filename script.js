@@ -109,6 +109,27 @@ function showSection(sectionId, targetId = null) {
     }
 }
 
+// Navigation
+document.querySelectorAll(".sidebar-nav [data-section], .content-section [data-section]")
+  .forEach(link => {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+
+      const sectionId = link.dataset.section;
+      const targetId = link.dataset.target || null;
+
+      showSection(sectionId, targetId);
+
+      history.replaceState(
+        null,
+        "",
+        `#${targetId || sectionId}`
+      );
+    });
+  });
+
+
+
 
 function getFilteredTransactions() {const startDate = getElement("filterStartDate")?.value || "";
     const endDate = getElement("filterEndDate")?.value || "";
